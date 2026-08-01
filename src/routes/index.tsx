@@ -1,24 +1,112 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Btn } from "@/components/site/Primitives";
+import {
+  ClosingCTA,
+  FeaturedProjects,
+  Partnership,
+  PhilosophySplit,
+  Process,
+  ServicesOverview,
+} from "@/components/site/Sections";
+import { site } from "@/data/site";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Home | MH Group LLC";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: site.homeDescription },
+      { property: "og:title", content: title },
+      { property: "og:description", content: site.homeDescription },
+      { property: "og:url", content: "/" },
+      { property: "og:image", content: "/images/og-image.webp" },
+      { name: "twitter:image", content: "/images/og-image.webp" },
+    ],
+    links: [
+      { rel: "canonical", href: "/" },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/images/upper-west-side-86th-after-01.webp",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+function Hero() {
+  return (
+    <section className="relative isolate bg-ink lg:min-h-[88vh]">
+      {/* photograph */}
+      <div className="relative h-[320px] w-full lg:absolute lg:inset-y-0 lg:left-[38%] lg:h-full lg:w-[62%]">
+        <img
+          src="/images/upper-west-side-86th-after-01.webp"
+          alt="Completed open living and kitchen area of the Upper West Side Residence renovated by MH Group"
+          width={2400}
+          height={1602}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="photo-grade h-full w-full object-cover"
+        />
+        <span
+          aria-hidden="true"
+          className="absolute inset-y-0 left-0 w-[16%]"
+          style={{
+            background:
+              "linear-gradient(to right, #133846 0%, rgba(19,56,70,0) 100%)",
+          }}
+        />
+      </div>
+
+      {/* ink panel */}
+      <div className="relative z-10 bg-ink lg:w-[44%]">
+        <div className="flex min-h-full items-center px-5 py-16 lg:px-0 lg:py-32 lg:pl-16 xl:pl-[max(64px,calc((100vw-1280px)/2+64px))]">
+          <div className="max-w-[480px]">
+            <p className="eyebrow">ONE PARTNER. EVERY STEP HOME.</p>
+            <h1 className="mt-6 text-[38px] leading-[1.04] text-white lg:text-[72px]">
+              Your All-in-One
+              <br />
+              Real Estate &amp; Home
+              <br />
+              Solution in New York
+            </h1>
+            <span className="mt-8 block h-px w-14 bg-brass" />
+            <p className="mt-8 text-[16px] leading-[1.75] text-white/70">
+              From buying or selling to managing, designing, furnishing, and moving in — we
+              take care of everything so you can enjoy the results.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Btn to="/services" variant="brass" arrow>
+                Explore Our Services
+              </Btn>
+              <Btn to="/projects" variant="ghost-white">
+                View Our Projects
+              </Btn>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <>
+      <Hero />
+      <ServicesOverview />
+      <FeaturedProjects />
+      <Process />
+      <PhilosophySplit />
+      <Partnership />
+      <ClosingCTA
+        title="Ready to Begin Your Journey?"
+        sub="Let us take care of the details, so you can enjoy the possibilities."
+        buttonLabel="Get in Touch"
+        image="/images/upper-west-side-86th-after-03.webp"
       />
-    </div>
+    </>
   );
 }
