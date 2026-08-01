@@ -21,8 +21,16 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: site.homeDescription },
       { property: "og:url", content: "/" },
-      { property: "og:image", content: "/images/og-image.webp" },
-      { name: "twitter:image", content: "/images/og-image.webp" },
+      {
+        property: "og:image",
+        content:
+          "https://project--759a7093-a7d7-4807-a88a-ccca827488b5.lovable.app/images/og-image.webp",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://project--759a7093-a7d7-4807-a88a-ccca827488b5.lovable.app/images/og-image.webp",
+      },
     ],
     links: [
       { rel: "canonical", href: "/" },
