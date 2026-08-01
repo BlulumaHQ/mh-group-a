@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ClosingCTA, ProjectCard } from "@/components/site/Sections";
 import { Reveal, SectionHeading } from "@/components/site/Primitives";
 import { projects } from "@/data/projects";
+import { abs } from "@/data/site";
 
 const title = "Projects | MH Group LLC";
 const description =
@@ -15,9 +16,9 @@ export const Route = createFileRoute("/projects/")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/projects" },
+      { property: "og:url", content: abs("/projects") },
     ],
-    links: [{ rel: "canonical", href: "/projects" }],
+    links: [{ rel: "canonical", href: abs("/projects") }],
   }),
 });
 

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ClosingCTA, Process } from "@/components/site/Sections";
 import { GoldColumn, LineIcon, SectionHeading } from "@/components/site/Primitives";
-import { renovationDetail, services } from "@/data/site";
+import { abs, renovationDetail, services } from "@/data/site";
 
 const title = "Services | MH Group LLC";
 const description =
@@ -15,9 +15,9 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: abs("/services") },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: abs("/services") }],
   }),
 });
 

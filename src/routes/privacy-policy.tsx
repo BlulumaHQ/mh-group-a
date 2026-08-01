@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GoldColumn, SectionHeading } from "@/components/site/Primitives";
-import { site } from "@/data/site";
+import { abs, site } from "@/data/site";
 
 const title = "Privacy Policy | MH Group LLC";
 const description =
@@ -14,9 +14,9 @@ export const Route = createFileRoute("/privacy-policy")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/privacy-policy" },
+      { property: "og:url", content: abs("/privacy-policy") },
     ],
-    links: [{ rel: "canonical", href: "/privacy-policy" }],
+    links: [{ rel: "canonical", href: abs("/privacy-policy") }],
   }),
 });
 

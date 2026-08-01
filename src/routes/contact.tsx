@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { GoldColumn, LineIcon, SectionHeading } from "@/components/site/Primitives";
-import { services, site } from "@/data/site";
+import { abs, services, site } from "@/data/site";
 
 const title = "Contact | MH Group LLC";
 const description =
@@ -15,9 +15,9 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: abs("/contact") },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: abs("/contact") }],
   }),
 });
 

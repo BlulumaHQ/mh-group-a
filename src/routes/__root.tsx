@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { NOINDEX } from "@/data/site";
 
 function NotFoundComponent() {
   return (
@@ -88,6 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "MH Group LLC" },
       { name: "twitter:card", content: "summary_large_image" },
+      ...(NOINDEX ? [{ name: "robots", content: "noindex, nofollow" }] : []),
     ],
     links: [
       {

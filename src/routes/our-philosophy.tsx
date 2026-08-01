@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ClosingCTA, Partnership } from "@/components/site/Sections";
 import { GoldColumn, LineIcon, SectionHeading } from "@/components/site/Primitives";
+import { abs } from "@/data/site";
 
 const title = "Our Philosophy | MH Group LLC";
 const description =
@@ -14,9 +15,9 @@ export const Route = createFileRoute("/our-philosophy")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/our-philosophy" },
+      { property: "og:url", content: abs("/our-philosophy") },
     ],
-    links: [{ rel: "canonical", href: "/our-philosophy" }],
+    links: [{ rel: "canonical", href: abs("/our-philosophy") }],
   }),
 });
 

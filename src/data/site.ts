@@ -1,3 +1,19 @@
+// ─────────────────────────────────────────────────────────────
+// SITE ORIGIN — the ONLY place the deployed domain is written.
+// Currently pointing at the temporary Cloudflare Workers subdomain.
+// On launch: change this one line to the client's real domain,
+// then follow the LAUNCH CHECKLIST in README.md.
+// ─────────────────────────────────────────────────────────────
+export const SITE_URL = "https://mh-group.workers.dev"; // no trailing slash
+
+export const abs = (path: string) =>
+  `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+
+export const OG_IMAGE = abs("/images/og-image.webp");
+
+// Flip to false on launch so the real domain gets indexed.
+export const NOINDEX = true;
+
 export const site = {
   name: "MH Group LLC",
   positioning: "One Partner. Every Step Home.",

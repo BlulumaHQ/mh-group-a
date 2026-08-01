@@ -8,9 +8,9 @@ import {
   Process,
   ServicesOverview,
 } from "@/components/site/Sections";
-import { site } from "@/data/site";
+import { abs, OG_IMAGE, site } from "@/data/site";
 
-const title = "Home | MH Group LLC";
+const title = "MH Group LLC | Renovation & Project Management in Manhattan";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -18,22 +18,27 @@ export const Route = createFileRoute("/")({
     meta: [
       { title },
       { name: "description", content: site.homeDescription },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "MH Group LLC" },
+      { property: "og:locale", content: "en_US" },
       { property: "og:title", content: title },
       { property: "og:description", content: site.homeDescription },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: abs("/") },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       {
-        property: "og:image",
+        property: "og:image:alt",
         content:
-          "https://project--759a7093-a7d7-4807-a88a-ccca827488b5.lovable.app/images/og-image.webp",
+          "MH Group LLC — renovation and project management in Manhattan",
       },
-      {
-        name: "twitter:image",
-        content:
-          "https://project--759a7093-a7d7-4807-a88a-ccca827488b5.lovable.app/images/og-image.webp",
-      },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: site.homeDescription },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: abs("/") },
       {
         rel: "preload",
         as: "image",
