@@ -1,11 +1,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "mh-group",
-  "main": ".output/server/index.mjs",
+  // Nitro's Cloudflare preset emits the Worker to dist/server and static
+  // assets to dist/client, then generates dist/server/wrangler.json from
+  // this file (main/assets are rewritten there to build-relative paths).
+  // `wrangler deploy` picks that up via .wrangler/deploy/config.json.
+  "main": "dist/server/index.mjs",
   "compatibility_date": "2026-07-01",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
-    "directory": ".output/public",
+    "directory": "dist/client",
     "binding": "ASSETS"
   },
   "observability": { "enabled": true }
