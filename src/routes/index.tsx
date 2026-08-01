@@ -37,7 +37,7 @@ export const Route = createFileRoute("/")({
 
 function Hero() {
   return (
-    <section className="relative isolate bg-ink lg:min-h-[88vh]">
+    <section className="relative isolate flex flex-col bg-ink lg:min-h-[88vh]">
       {/* photograph */}
       <div className="relative h-[320px] w-full lg:absolute lg:inset-y-0 lg:left-[38%] lg:h-full lg:w-[62%]">
         <img
@@ -61,11 +61,16 @@ function Hero() {
       </div>
 
       {/* ink panel */}
-      <div className="relative z-10 bg-ink lg:w-[44%]">
-        <div className="flex min-h-full items-center px-5 py-16 lg:px-0 lg:py-32 lg:pl-16 xl:pl-[max(64px,calc((100vw-1280px)/2+64px))]">
-          <div className="max-w-[480px]">
+      <div className="relative z-10 flex flex-1 bg-ink lg:w-[46%] lg:min-h-[88vh]">
+        <div className="flex w-full items-center px-5 py-16 lg:px-0 lg:py-24 lg:pl-16 xl:pl-[max(64px,calc((100vw-1280px)/2+64px))]">
+          <div className="flex max-w-[560px]">
+            <span
+              aria-hidden="true"
+              className="mr-6 hidden w-[4px] shrink-0 self-stretch bg-brass lg:block"
+            />
+            <div>
             <p className="eyebrow">ONE PARTNER. EVERY STEP HOME.</p>
-            <h1 className="mt-6 text-[38px] leading-[1.04] text-white lg:text-[72px]">
+            <h1 className="mt-6 text-[38px] leading-[1.04] text-white lg:text-[54px] xl:text-[62px]">
               Your All-in-One
               <br />
               Real Estate &amp; Home
@@ -84,6 +89,7 @@ function Hero() {
               <Btn to="/projects" variant="ghost-white">
                 View Our Projects
               </Btn>
+            </div>
             </div>
           </div>
         </div>
