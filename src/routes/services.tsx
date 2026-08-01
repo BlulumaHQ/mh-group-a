@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ClosingCTA, Process } from "@/components/site/Sections";
-import { GoldColumn, LineIcon, Reveal, SectionHeading } from "@/components/site/Primitives";
+import { GoldColumn, LineIcon, SectionHeading } from "@/components/site/Primitives";
 import { renovationDetail, services } from "@/data/site";
 
 const title = "Services | MH Group LLC";
@@ -125,8 +125,6 @@ function ServicesPage() {
         buttonLabel="Get in Touch"
         image="/images/upper-west-side-86th-after-03.webp"
       />
-
-      <Reveal />
     </>
   );
 }
