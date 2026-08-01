@@ -6,18 +6,16 @@ export function MHMark({
   className?: string;
 }) {
   return (
-    <svg
+    <img
+      src="/images/mh-group-mark.svg"
       width={size}
       height={size}
-      viewBox="0 0 64 64"
-      fill="none"
-      className={className}
+      alt=""
       aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M14 20.5 26 14v36H14z" fill="#BF935B" />
-      <path d="M30 22.5 48 14v36H30z" fill="#BF935B" />
-    </svg>
+      loading="lazy"
+      className={className}
+      style={{ height: size, width: "auto" }}
+    />
   );
 }
 
