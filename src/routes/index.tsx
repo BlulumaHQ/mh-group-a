@@ -61,16 +61,16 @@ function Hero() {
       </div>
 
       {/* ink panel */}
-      <div className="relative z-10 flex flex-1 bg-ink lg:w-[46%] lg:min-h-[88vh]">
+      <div className="relative z-10 flex flex-1 bg-ink lg:w-[50%] lg:min-h-[88vh]">
         <div className="flex w-full items-center px-5 py-16 lg:px-0 lg:py-24 lg:pl-16 xl:pl-[max(64px,calc((100vw-1280px)/2+64px))]">
-          <div className="flex max-w-[560px]">
+          <div className="flex max-w-[620px]">
             <span
               aria-hidden="true"
               className="mr-6 hidden w-[4px] shrink-0 self-stretch bg-brass lg:block"
             />
             <div>
             <p className="eyebrow">ONE PARTNER. EVERY STEP HOME.</p>
-            <h1 className="mt-6 text-[38px] leading-[1.04] text-white lg:text-[44px] xl:text-[52px]">
+            <h1 className="mt-6 text-[38px] leading-[1.04] text-white lg:text-[42px] xl:text-[50px]">
               Your All-in-One
               <br />
               Real Estate &amp; Home
