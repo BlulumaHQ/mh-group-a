@@ -617,3 +617,22 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## LAUNCH CHECKLIST — when the real domain is confirmed
+
+1. `src/data/site.ts` → set `SITE_URL` to the real origin
+   (e.g. `https://www.mhgroupllc.com`), no trailing slash.
+2. `src/data/site.ts` → set `NOINDEX = false`.
+3. `public/robots.txt` → replace with:
+
+       User-agent: *
+       Allow: /
+
+       Sitemap: https://REAL-DOMAIN/sitemap.xml
+
+4. `public/sitemap.xml` → rewrite every `<loc>` as an absolute URL on the real domain and
+   add a `<lastmod>` date to each entry. Keep the existing routes and priorities.
+5. Add the custom domain to the Worker in the Cloudflare dashboard, then redeploy.
+6. Verify: view-source the homepage and confirm `og:url`, `og:image` and `canonical` all
+   point at the real domain, and that no `robots: noindex` tag is present on any page.
+7. Re-scrape the homepage in a social debugger so the old card is flushed.
