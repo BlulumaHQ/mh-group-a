@@ -14,6 +14,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as OurPhilosophyRouteImport } from './routes/our-philosophy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TermsOfUseRouteImport } from './routes/terms-of-use'
 import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects/$slug'
 
@@ -42,6 +43,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsOfUseRoute = TermsOfUseRouteImport.update({
+  id: '/terms-of-use',
+  path: '/terms-of-use',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
   id: '/projects/',
   path: '/projects/',
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/our-philosophy': typeof OurPhilosophyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/our-philosophy': typeof OurPhilosophyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects': typeof ProjectsIndexRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/our-philosophy': typeof OurPhilosophyRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
   '/projects/': typeof ProjectsIndexRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/our-philosophy'
     | '/privacy-policy'
     | '/services'
+    | '/terms-of-use'
     | '/projects/$slug'
     | '/projects/'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/our-philosophy'
     | '/privacy-policy'
     | '/services'
+    | '/terms-of-use'
     | '/projects/$slug'
     | '/projects'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/our-philosophy'
     | '/privacy-policy'
     | '/services'
+    | '/terms-of-use'
     | '/projects/$slug'
     | '/projects/'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   OurPhilosophyRoute: typeof OurPhilosophyRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRoute
+  TermsOfUseRoute: typeof TermsOfUseRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms-of-use': {
+      id: '/terms-of-use'
+      path: '/terms-of-use'
+      fullPath: '/terms-of-use'
+      preLoaderRoute: typeof TermsOfUseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects/': {
       id: '/projects/'
       path: '/projects'
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   OurPhilosophyRoute: OurPhilosophyRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
+  TermsOfUseRoute: TermsOfUseRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
 }
