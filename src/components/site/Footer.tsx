@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MHMark } from "./Logo";
+import { MHCircleMark } from "./Logo";
 import { LineIcon } from "./Primitives";
 import { site } from "@/data/site";
 
@@ -23,12 +23,7 @@ export function Footer() {
     <footer className="bg-ink">
       <div className="container-mh grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
         <div>
-          <span className="flex items-center gap-3">
-            <MHMark size={30} />
-            <span className="font-sans text-[15px] font-medium tracking-[0.04em] text-white">
-              MH Group LLC
-            </span>
-          </span>
+          <MHCircleMark size={92} />
           <p className="mt-6 max-w-[300px] text-[14px] leading-[1.8] text-white/60">
             {site.footerTagline}
           </p>

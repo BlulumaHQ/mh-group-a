@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { MHMark } from "./Logo";
+import { HeaderLogo } from "./Logo";
 
 const nav = [
   { label: "Home", to: "/" },
@@ -36,11 +36,8 @@ export function Header() {
       }`}
     >
       <div className="container-mh flex h-[76px] items-center justify-between">
-        <Link to="/" className="flex items-center gap-3" aria-label="MH Group LLC — home">
-          <MHMark size={30} />
-          <span className="font-sans text-[15px] font-medium tracking-[0.04em] text-white">
-            MH Group LLC
-          </span>
+        <Link to="/" className="flex items-center" aria-label="MH Group LLC — home">
+          <HeaderLogo height={44} className="h-[36px] sm:h-[44px]" />
         </Link>
 
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Main">
