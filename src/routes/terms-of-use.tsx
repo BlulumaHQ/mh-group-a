@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GoldColumn, SectionHeading } from "@/components/site/Primitives";
-import { site } from "@/data/site";
+import { abs, site } from "@/data/site";
 
 const title = "Terms of Use | MH Group LLC";
 const description =
@@ -14,9 +14,9 @@ export const Route = createFileRoute("/terms-of-use")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: "/terms-of-use" },
+      { property: "og:url", content: abs("/terms-of-use") },
     ],
-    links: [{ rel: "canonical", href: "/terms-of-use" }],
+    links: [{ rel: "canonical", href: abs("/terms-of-use") }],
   }),
 });
 

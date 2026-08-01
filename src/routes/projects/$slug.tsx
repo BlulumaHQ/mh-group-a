@@ -3,6 +3,7 @@ import { useState } from "react";
 import { getProject, projectHighlights, projects } from "@/data/projects";
 import { ClosingCTA } from "@/components/site/Sections";
 import { GoldColumn, LineIcon, Reveal } from "@/components/site/Primitives";
+import { abs } from "@/data/site";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -23,9 +24,9 @@ export const Route = createFileRoute("/projects/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/projects/${params.slug}` },
+        { property: "og:url", content: abs(`/projects/${params.slug}`) },
       ],
-      links: [{ rel: "canonical", href: `/projects/${params.slug}` }],
+      links: [{ rel: "canonical", href: abs(`/projects/${params.slug}`) }],
     };
   },
   component: ProjectDetail,
