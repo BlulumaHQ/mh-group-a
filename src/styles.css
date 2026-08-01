@@ -5,6 +5,26 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
+ * MH GROUP LLC — "Madison Avenue Editorial"
+ * Ink / paper / brass. Zero radius, zero shadows, 1px hairlines.
+ */
+
+@theme {
+  --color-ink: #133846;
+  --color-ink-deep: #0d2833;
+  --color-paper: #f7f5f1;
+  --color-brass: #bf935b;
+  --color-brass-deep: #a87f49;
+  --color-brass-light: #e4cba4;
+  --color-inktext: #1b2a31;
+  --color-mutedtext: #6e7c82;
+  --color-hairline: #dcd6cc;
+  --color-hairline-ink: rgba(191, 147, 91, 0.22);
+  --font-display: "Playfair Display", "Noto Serif TC", Georgia, serif;
+  --font-sans: "Jost", "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
  * Design system definition.
  *
  * The @theme inline block maps CSS custom properties to Tailwind utility
