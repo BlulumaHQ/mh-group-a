@@ -70,7 +70,7 @@ function Hero() {
             />
             <div>
             <p className="eyebrow">ONE PARTNER. EVERY STEP HOME.</p>
-            <h1 className="mt-6 text-[38px] leading-[1.04] text-white lg:text-[54px] xl:text-[62px]">
+            <h1 className="mt-6 text-[38px] leading-[1.04] text-white lg:text-[44px] xl:text-[52px]">
               Your All-in-One
               <br />
               Real Estate &amp; Home
