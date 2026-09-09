@@ -17,6 +17,9 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TermsOfUseRouteImport } from './routes/terms-of-use'
 import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects/$slug'
+import { Route as ZhIndexRouteImport } from './routes/zh/index'
+import { Route as ZhServicesRouteImport } from './routes/zh/services'
+import { Route as ZhProjectsIndexRouteImport } from './routes/zh/projects/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +61,21 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
   path: '/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ZhIndexRoute = ZhIndexRouteImport.update({
+  id: '/zh/',
+  path: '/zh/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZhServicesRoute = ZhServicesRouteImport.update({
+  id: '/zh/services',
+  path: '/zh/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZhProjectsIndexRoute = ZhProjectsIndexRouteImport.update({
+  id: '/zh/projects/',
+  path: '/zh/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -67,7 +85,10 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/zh/services': typeof ZhServicesRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/zh/': typeof ZhIndexRoute
+  '/zh/projects/': typeof ZhProjectsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,7 +98,10 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/zh/services': typeof ZhServicesRoute
   '/projects': typeof ProjectsIndexRoute
+  '/zh': typeof ZhIndexRoute
+  '/zh/projects': typeof ZhProjectsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,7 +112,10 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/zh/services': typeof ZhServicesRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/zh/': typeof ZhIndexRoute
+  '/zh/projects/': typeof ZhProjectsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -100,7 +127,10 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms-of-use'
     | '/projects/$slug'
+    | '/zh/services'
     | '/projects/'
+    | '/zh/'
+    | '/zh/projects/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -110,7 +140,10 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms-of-use'
     | '/projects/$slug'
+    | '/zh/services'
     | '/projects'
+    | '/zh'
+    | '/zh/projects'
   id:
     | '__root__'
     | '/'
@@ -120,7 +153,10 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms-of-use'
     | '/projects/$slug'
+    | '/zh/services'
     | '/projects/'
+    | '/zh/'
+    | '/zh/projects/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -131,7 +167,10 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   TermsOfUseRoute: typeof TermsOfUseRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
+  ZhServicesRoute: typeof ZhServicesRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
+  ZhIndexRoute: typeof ZhIndexRoute
+  ZhProjectsIndexRoute: typeof ZhProjectsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -192,6 +231,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/zh/': {
+      id: '/zh/'
+      path: '/zh'
+      fullPath: '/zh/'
+      preLoaderRoute: typeof ZhIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zh/services': {
+      id: '/zh/services'
+      path: '/zh/services'
+      fullPath: '/zh/services'
+      preLoaderRoute: typeof ZhServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zh/projects/': {
+      id: '/zh/projects/'
+      path: '/zh/projects'
+      fullPath: '/zh/projects/'
+      preLoaderRoute: typeof ZhProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -203,7 +263,10 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   TermsOfUseRoute: TermsOfUseRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
+  ZhServicesRoute: ZhServicesRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
+  ZhIndexRoute: ZhIndexRoute,
+  ZhProjectsIndexRoute: ZhProjectsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
