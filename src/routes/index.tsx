@@ -119,7 +119,7 @@ function Index() {
       <FeaturedProjects />
       <Process />
       <PhilosophySplit />
-      <Partnership />
+      <Partnership withLockup />
       <ClosingCTA
         title="Ready to Begin Your Journey?"
         sub="Let us take care of the details, so you can enjoy the possibilities."
