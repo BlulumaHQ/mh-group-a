@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ClosingCTA, Process } from "@/components/site/Sections";
 import { GoldColumn, LineIcon, SectionHeading } from "@/components/site/Primitives";
 import { abs, renovationDetail, services } from "@/data/site";
+import { PartnerSalesBranding } from "@/components/site/PartnerSalesBranding";
 
 const title = "Services | MH Group LLC";
 const description =
@@ -89,6 +90,15 @@ function ServicesPage() {
                 <div className="mt-8">
                   <LineIcon name={s.icon} size={40} />
                 </div>
+
+                {s.slug === "sales" ? (
+                  <div className="mt-12 border-t border-hairline pt-10">
+                    <p className="font-sans text-[11px] uppercase tracking-[0.16em] text-mutedtext">
+                      Sales Represented By
+                    </p>
+                    <PartnerSalesBranding align="left" size="sm" className="mt-6" />
+                  </div>
+                ) : null}
 
                 {s.slug === "renovation" ? (
                   <ul className="mt-12 divide-y divide-hairline border-t border-hairline">

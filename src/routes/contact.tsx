@@ -67,8 +67,8 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="bg-paper px-5 py-16 lg:px-20 lg:py-24">
+      <section className="grid grid-cols-1 lg:grid-cols-[64%_36%]">
+        <div className="order-1 bg-paper px-5 py-16 lg:px-20 lg:py-24">
           <div className="flex">
             <GoldColumn onPaper />
             <h2 className="text-[26px] text-inktext lg:text-[34px]">Send Us a Note</h2>
@@ -87,7 +87,7 @@ function ContactPage() {
               </a>
             </div>
           ) : (
-            <form className="mt-10 space-y-7" onSubmit={onSubmit} noValidate>
+            <form className="mt-10 max-w-[620px] space-y-7" onSubmit={onSubmit} noValidate>
               <div>
                 <label className={labelClass} htmlFor="name">
                   Name
@@ -186,7 +186,7 @@ function ContactPage() {
           )}
         </div>
 
-        <div className="bg-ink px-5 py-16 lg:px-20 lg:py-24">
+        <div className="order-2 bg-ink px-5 py-16 lg:px-12 lg:py-24">
           <div className="flex">
             <GoldColumn />
             <h2 className="text-[26px] text-white lg:text-[34px]">Speak With Us</h2>
@@ -214,7 +214,7 @@ function ContactPage() {
                 </p>
                 <a
                   href={`mailto:${site.email}`}
-                  className="mt-1 block text-[16px] text-white transition-colors hover:text-brass"
+                  className="mt-1 block break-all text-[16px] text-white transition-colors hover:text-brass"
                 >
                   {site.email}
                 </a>
@@ -230,15 +230,6 @@ function ContactPage() {
               </div>
             </li>
           </ul>
-          <div
-            className="mt-12 border-t pt-8"
-            style={{ borderColor: "rgba(191,147,91,.22)" }}
-          >
-            <p className="font-display text-[22px] text-white">{site.contactPerson}</p>
-            <p className="mt-2 font-sans text-[12px] uppercase tracking-[0.14em] text-brass">
-              {site.contactTitle}
-            </p>
-          </div>
         </div>
       </section>
     </>
