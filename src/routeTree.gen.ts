@@ -18,6 +18,7 @@ import { Route as TermsOfUseRouteImport } from './routes/terms-of-use'
 import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects/$slug'
 import { Route as ZhIndexRouteImport } from './routes/zh/index'
+import { Route as ZhContactRouteImport } from './routes/zh/contact'
 import { Route as ZhOurPhilosophyRouteImport } from './routes/zh/our-philosophy'
 import { Route as ZhPrivacyPolicyRouteImport } from './routes/zh/privacy-policy'
 import { Route as ZhServicesRouteImport } from './routes/zh/services'
@@ -70,6 +71,11 @@ const ZhIndexRoute = ZhIndexRouteImport.update({
   path: '/zh/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ZhContactRoute = ZhContactRouteImport.update({
+  id: '/zh/contact',
+  path: '/zh/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ZhOurPhilosophyRoute = ZhOurPhilosophyRouteImport.update({
   id: '/zh/our-philosophy',
   path: '/zh/our-philosophy',
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/zh/contact': typeof ZhContactRoute
   '/zh/our-philosophy': typeof ZhOurPhilosophyRoute
   '/zh/privacy-policy': typeof ZhPrivacyPolicyRoute
   '/zh/services': typeof ZhServicesRoute
@@ -126,6 +133,7 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/zh/contact': typeof ZhContactRoute
   '/zh/our-philosophy': typeof ZhOurPhilosophyRoute
   '/zh/privacy-policy': typeof ZhPrivacyPolicyRoute
   '/zh/services': typeof ZhServicesRoute
@@ -144,6 +152,7 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/zh/contact': typeof ZhContactRoute
   '/zh/our-philosophy': typeof ZhOurPhilosophyRoute
   '/zh/privacy-policy': typeof ZhPrivacyPolicyRoute
   '/zh/services': typeof ZhServicesRoute
@@ -163,6 +172,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms-of-use'
     | '/projects/$slug'
+    | '/zh/contact'
     | '/zh/our-philosophy'
     | '/zh/privacy-policy'
     | '/zh/services'
@@ -180,6 +190,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms-of-use'
     | '/projects/$slug'
+    | '/zh/contact'
     | '/zh/our-philosophy'
     | '/zh/privacy-policy'
     | '/zh/services'
@@ -197,6 +208,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms-of-use'
     | '/projects/$slug'
+    | '/zh/contact'
     | '/zh/our-philosophy'
     | '/zh/privacy-policy'
     | '/zh/services'
@@ -215,6 +227,7 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   TermsOfUseRoute: typeof TermsOfUseRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
+  ZhContactRoute: typeof ZhContactRoute
   ZhOurPhilosophyRoute: typeof ZhOurPhilosophyRoute
   ZhPrivacyPolicyRoute: typeof ZhPrivacyPolicyRoute
   ZhServicesRoute: typeof ZhServicesRoute
@@ -290,6 +303,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZhIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/zh/contact': {
+      id: '/zh/contact'
+      path: '/zh/contact'
+      fullPath: '/zh/contact'
+      preLoaderRoute: typeof ZhContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/zh/our-philosophy': {
       id: '/zh/our-philosophy'
       path: '/zh/our-philosophy'
@@ -343,6 +363,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   TermsOfUseRoute: TermsOfUseRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
+  ZhContactRoute: ZhContactRoute,
   ZhOurPhilosophyRoute: ZhOurPhilosophyRoute,
   ZhPrivacyPolicyRoute: ZhPrivacyPolicyRoute,
   ZhServicesRoute: ZhServicesRoute,
