@@ -41,8 +41,8 @@ export function PartnerSalesBranding({
       <img
         src="/images/partners/corcoran-logo.png"
         alt="Corcoran"
-        width={1496}
-        height={224}
+        width={1520}
+        height={240}
         loading="lazy"
         decoding="async"
         className={`${corcoranW} h-auto`}
