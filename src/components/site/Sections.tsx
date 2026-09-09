@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Btn, GoldColumn, LineIcon, Reveal, SectionHeading } from "./Primitives";
-import { MHMark } from "./Logo";
+import { PartnerSalesBranding } from "./PartnerSalesBranding";
 import { services, processSteps } from "@/data/site";
 import { projects, type Project } from "@/data/projects";
 
@@ -41,13 +41,19 @@ export function ServicesOverview() {
 export function ProjectCard({
   project,
   eager = false,
+  locale = "en",
+  name,
+  scope,
 }: {
   project: Project;
   eager?: boolean;
+  locale?: "en" | "zh";
+  name?: string;
+  scope?: string;
 }) {
   return (
     <Link
-      to="/projects/$slug"
+      to={locale === "zh" ? "/zh/projects/$slug" : "/projects/$slug"}
       params={{ slug: project.slug }}
       className="group relative block overflow-hidden"
       style={{ aspectRatio: "4 / 5" }}
@@ -71,10 +77,10 @@ export function ProjectCard({
       />
       <span className="absolute inset-x-0 bottom-0 block p-5">
         <span className="block font-display text-[19px] text-white">
-          {project.name}
+          {name ?? project.name}
         </span>
         <span className="mt-1 block font-sans text-[12px] uppercase tracking-[0.1em] text-brass">
-          {project.scope}
+          {scope ?? project.scope}
         </span>
       </span>
     </Link>
@@ -221,22 +227,32 @@ export function PhilosophySplit() {
 }
 
 /* ---------- Partnership (no team photo supplied → centred statement) ---------- */
-export function Partnership() {
+export function Partnership({
+  eyebrow = "In Partnership with",
+  heading = "The Maggie Huang Team",
+  copy = "As the parent company, MH Group LLC provides the space-extended services and resources that power The Maggie Huang Team\u2019s real estate expertise and client success.",
+  withLockup = false,
+}: {
+  eyebrow?: string;
+  heading?: string;
+  copy?: string;
+  withLockup?: boolean;
+}) {
   return (
     <section className="section-pad bg-paper">
       <div className="container-mh flex flex-col items-center text-center">
-        <MHMark size={64} />
-        <p className="mt-8 font-sans text-[12px] uppercase tracking-[0.18em] text-mutedtext">
-          In Partnership with
+        {withLockup ? <PartnerSalesBranding /> : null}
+        <p
+          className={`${withLockup ? "mt-10" : ""} font-sans text-[12px] uppercase tracking-[0.18em] text-mutedtext`}
+        >
+          {eyebrow}
         </p>
-        <h2 className="mt-4 text-[30px] text-inktext lg:text-[44px]">
-          The Maggie Huang Team
+        <h2 className="mt-4 max-w-[840px] text-[30px] text-inktext lg:text-[44px]">
+          {heading}
         </h2>
         <span className="mt-8 block h-px w-12 bg-brass" />
         <p className="mt-8 max-w-[640px] text-[16px] leading-[1.75] text-mutedtext">
-          As the parent company, MH Group LLC provides the space-extended services and
-          resources that power The Maggie Huang Team&apos;s real estate expertise and client
-          success.
+          {copy}
         </p>
       </div>
     </section>
@@ -250,12 +266,14 @@ export function ClosingCTA({
   buttonLabel,
   image,
   ghost = false,
+  to = "/contact",
 }: {
   title: string;
   sub: string;
   buttonLabel: string;
   image: string;
   ghost?: boolean;
+  to?: string;
 }) {
   return (
     <section className="relative isolate overflow-hidden">
@@ -279,7 +297,7 @@ export function ClosingCTA({
             {sub}
           </p>
           <div className="mt-10 flex justify-center">
-            <Btn to="/contact" variant={ghost ? "ghost-brass" : "brass"} arrow>
+            <Btn to={to} variant={ghost ? "ghost-brass" : "brass"} arrow>
               {buttonLabel}
             </Btn>
           </div>
