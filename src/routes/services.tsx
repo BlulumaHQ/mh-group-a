@@ -91,7 +91,7 @@ function ServicesPage() {
                   <LineIcon name={s.icon} size={40} />
                 </div>
 
-                {s.slug === "sales" ? (
+                {s.slug === "real-estate" ? (
                   <div className="mt-12 border-t border-hairline pt-10">
                     <p className="font-sans text-[11px] uppercase tracking-[0.16em] text-mutedtext">
                       Sales Represented By
