@@ -4,7 +4,7 @@
 // On launch: change this one line to the client's real domain,
 // then follow the LAUNCH CHECKLIST in README.md.
 // ─────────────────────────────────────────────────────────────
-export const SITE_URL = "https://mh-group.workers.dev"; // no trailing slash
+export const SITE_URL = "https://mhgroupny.com"; // no trailing slash
 
 export const abs = (path: string) =>
   `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
@@ -17,9 +17,9 @@ export const NOINDEX = true;
 export const site = {
   name: "MH Group LLC",
   positioning: "One Partner. Every Step Home.",
-  phone: "+1 (917) 283-4300",
-  phoneHref: "tel:+19172834300",
-  email: "hello@mhgroupllc.com",
+  phone: "(917) 826-7864",
+  phoneHref: "tel:+19178267864",
+  email: "jenna.wu@mhgroupny.com",
   location: "New York, NY",
   contactPerson: "James Huang",
   contactTitle: "President, MH Group LLC",
