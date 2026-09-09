@@ -129,3 +129,15 @@ export const processSteps = [
     icon: "enjoy" as const,
   },
 ];
+// ─────────────────────────────────────────────────────────────
+// Real-estate sales partnership (The Maggie Huang Team @ Corcoran)
+// ─────────────────────────────────────────────────────────────
+export const CORCORAN_TEAM_URL =
+  "https://www.corcoran.com/real-estate-agents/detail/team/the-maggie-huang-team/493";
+
+/** hreflang set shared by an English page and its Traditional Chinese twin. */
+export const altLinks = (enPath: string, zhPath: string) => [
+  { rel: "alternate", hrefLang: "en", href: abs(enPath) },
+  { rel: "alternate", hrefLang: "zh-Hant", href: abs(zhPath) },
+  { rel: "alternate", hrefLang: "x-default", href: abs(enPath) },
+];
