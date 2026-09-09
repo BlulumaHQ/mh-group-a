@@ -17,6 +17,14 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TermsOfUseRouteImport } from './routes/terms-of-use'
 import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects/$slug'
+import { Route as ZhIndexRouteImport } from './routes/zh/index'
+import { Route as ZhContactRouteImport } from './routes/zh/contact'
+import { Route as ZhOurPhilosophyRouteImport } from './routes/zh/our-philosophy'
+import { Route as ZhPrivacyPolicyRouteImport } from './routes/zh/privacy-policy'
+import { Route as ZhServicesRouteImport } from './routes/zh/services'
+import { Route as ZhTermsOfUseRouteImport } from './routes/zh/terms-of-use'
+import { Route as ZhProjectsIndexRouteImport } from './routes/zh/projects/index'
+import { Route as ZhProjectsSlugRouteImport } from './routes/zh/projects/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +66,46 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
   path: '/projects/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ZhIndexRoute = ZhIndexRouteImport.update({
+  id: '/zh/',
+  path: '/zh/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZhContactRoute = ZhContactRouteImport.update({
+  id: '/zh/contact',
+  path: '/zh/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZhOurPhilosophyRoute = ZhOurPhilosophyRouteImport.update({
+  id: '/zh/our-philosophy',
+  path: '/zh/our-philosophy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZhPrivacyPolicyRoute = ZhPrivacyPolicyRouteImport.update({
+  id: '/zh/privacy-policy',
+  path: '/zh/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZhServicesRoute = ZhServicesRouteImport.update({
+  id: '/zh/services',
+  path: '/zh/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZhTermsOfUseRoute = ZhTermsOfUseRouteImport.update({
+  id: '/zh/terms-of-use',
+  path: '/zh/terms-of-use',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZhProjectsIndexRoute = ZhProjectsIndexRouteImport.update({
+  id: '/zh/projects/',
+  path: '/zh/projects/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZhProjectsSlugRoute = ZhProjectsSlugRouteImport.update({
+  id: '/zh/projects/$slug',
+  path: '/zh/projects/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -67,7 +115,15 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/zh/contact': typeof ZhContactRoute
+  '/zh/our-philosophy': typeof ZhOurPhilosophyRoute
+  '/zh/privacy-policy': typeof ZhPrivacyPolicyRoute
+  '/zh/services': typeof ZhServicesRoute
+  '/zh/terms-of-use': typeof ZhTermsOfUseRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/zh/': typeof ZhIndexRoute
+  '/zh/projects/$slug': typeof ZhProjectsSlugRoute
+  '/zh/projects/': typeof ZhProjectsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -77,7 +133,15 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/zh/contact': typeof ZhContactRoute
+  '/zh/our-philosophy': typeof ZhOurPhilosophyRoute
+  '/zh/privacy-policy': typeof ZhPrivacyPolicyRoute
+  '/zh/services': typeof ZhServicesRoute
+  '/zh/terms-of-use': typeof ZhTermsOfUseRoute
   '/projects': typeof ProjectsIndexRoute
+  '/zh': typeof ZhIndexRoute
+  '/zh/projects/$slug': typeof ZhProjectsSlugRoute
+  '/zh/projects': typeof ZhProjectsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -88,7 +152,15 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/terms-of-use': typeof TermsOfUseRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/zh/contact': typeof ZhContactRoute
+  '/zh/our-philosophy': typeof ZhOurPhilosophyRoute
+  '/zh/privacy-policy': typeof ZhPrivacyPolicyRoute
+  '/zh/services': typeof ZhServicesRoute
+  '/zh/terms-of-use': typeof ZhTermsOfUseRoute
   '/projects/': typeof ProjectsIndexRoute
+  '/zh/': typeof ZhIndexRoute
+  '/zh/projects/$slug': typeof ZhProjectsSlugRoute
+  '/zh/projects/': typeof ZhProjectsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -100,7 +172,15 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms-of-use'
     | '/projects/$slug'
+    | '/zh/contact'
+    | '/zh/our-philosophy'
+    | '/zh/privacy-policy'
+    | '/zh/services'
+    | '/zh/terms-of-use'
     | '/projects/'
+    | '/zh/'
+    | '/zh/projects/$slug'
+    | '/zh/projects/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -110,7 +190,15 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms-of-use'
     | '/projects/$slug'
+    | '/zh/contact'
+    | '/zh/our-philosophy'
+    | '/zh/privacy-policy'
+    | '/zh/services'
+    | '/zh/terms-of-use'
     | '/projects'
+    | '/zh'
+    | '/zh/projects/$slug'
+    | '/zh/projects'
   id:
     | '__root__'
     | '/'
@@ -120,7 +208,15 @@ export interface FileRouteTypes {
     | '/services'
     | '/terms-of-use'
     | '/projects/$slug'
+    | '/zh/contact'
+    | '/zh/our-philosophy'
+    | '/zh/privacy-policy'
+    | '/zh/services'
+    | '/zh/terms-of-use'
     | '/projects/'
+    | '/zh/'
+    | '/zh/projects/$slug'
+    | '/zh/projects/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -131,7 +227,15 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   TermsOfUseRoute: typeof TermsOfUseRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
+  ZhContactRoute: typeof ZhContactRoute
+  ZhOurPhilosophyRoute: typeof ZhOurPhilosophyRoute
+  ZhPrivacyPolicyRoute: typeof ZhPrivacyPolicyRoute
+  ZhServicesRoute: typeof ZhServicesRoute
+  ZhTermsOfUseRoute: typeof ZhTermsOfUseRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
+  ZhIndexRoute: typeof ZhIndexRoute
+  ZhProjectsSlugRoute: typeof ZhProjectsSlugRoute
+  ZhProjectsIndexRoute: typeof ZhProjectsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -192,6 +296,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/zh/': {
+      id: '/zh/'
+      path: '/zh'
+      fullPath: '/zh/'
+      preLoaderRoute: typeof ZhIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zh/contact': {
+      id: '/zh/contact'
+      path: '/zh/contact'
+      fullPath: '/zh/contact'
+      preLoaderRoute: typeof ZhContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zh/our-philosophy': {
+      id: '/zh/our-philosophy'
+      path: '/zh/our-philosophy'
+      fullPath: '/zh/our-philosophy'
+      preLoaderRoute: typeof ZhOurPhilosophyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zh/privacy-policy': {
+      id: '/zh/privacy-policy'
+      path: '/zh/privacy-policy'
+      fullPath: '/zh/privacy-policy'
+      preLoaderRoute: typeof ZhPrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zh/services': {
+      id: '/zh/services'
+      path: '/zh/services'
+      fullPath: '/zh/services'
+      preLoaderRoute: typeof ZhServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zh/terms-of-use': {
+      id: '/zh/terms-of-use'
+      path: '/zh/terms-of-use'
+      fullPath: '/zh/terms-of-use'
+      preLoaderRoute: typeof ZhTermsOfUseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zh/projects/': {
+      id: '/zh/projects/'
+      path: '/zh/projects'
+      fullPath: '/zh/projects/'
+      preLoaderRoute: typeof ZhProjectsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zh/projects/$slug': {
+      id: '/zh/projects/$slug'
+      path: '/zh/projects/$slug'
+      fullPath: '/zh/projects/$slug'
+      preLoaderRoute: typeof ZhProjectsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -203,7 +363,15 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   TermsOfUseRoute: TermsOfUseRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
+  ZhContactRoute: ZhContactRoute,
+  ZhOurPhilosophyRoute: ZhOurPhilosophyRoute,
+  ZhPrivacyPolicyRoute: ZhPrivacyPolicyRoute,
+  ZhServicesRoute: ZhServicesRoute,
+  ZhTermsOfUseRoute: ZhTermsOfUseRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
+  ZhIndexRoute: ZhIndexRoute,
+  ZhProjectsSlugRoute: ZhProjectsSlugRoute,
+  ZhProjectsIndexRoute: ZhProjectsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

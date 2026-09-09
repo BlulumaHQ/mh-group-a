@@ -4,7 +4,7 @@
 // On launch: change this one line to the client's real domain,
 // then follow the LAUNCH CHECKLIST in README.md.
 // ─────────────────────────────────────────────────────────────
-export const SITE_URL = "https://mh-group.workers.dev"; // no trailing slash
+export const SITE_URL = "https://mhgroupny.com"; // no trailing slash
 
 export const abs = (path: string) =>
   `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
@@ -17,9 +17,9 @@ export const NOINDEX = true;
 export const site = {
   name: "MH Group LLC",
   positioning: "One Partner. Every Step Home.",
-  phone: "+1 (917) 283-4300",
-  phoneHref: "tel:+19172834300",
-  email: "hello@mhgroupllc.com",
+  phone: "(917) 826-7864",
+  phoneHref: "tel:+19178267864",
+  email: "jenna.wu@mhgroupny.com",
   location: "New York, NY",
   contactPerson: "James Huang",
   contactTitle: "President, MH Group LLC",
@@ -128,4 +128,16 @@ export const processSteps = [
     copy: "Move in with confidence and enjoy a home that reflects your vision.",
     icon: "enjoy" as const,
   },
+];
+// ─────────────────────────────────────────────────────────────
+// Real-estate sales partnership (The Maggie Huang Team @ Corcoran)
+// ─────────────────────────────────────────────────────────────
+export const CORCORAN_TEAM_URL =
+  "https://www.corcoran.com/real-estate-agents/detail/team/the-maggie-huang-team/493";
+
+/** hreflang set shared by an English page and its Traditional Chinese twin. */
+export const altLinks = (enPath: string, zhPath: string) => [
+  { rel: "alternate", hrefLang: "en", href: abs(enPath) },
+  { rel: "alternate", hrefLang: "zh-Hant", href: abs(zhPath) },
+  { rel: "alternate", hrefLang: "x-default", href: abs(enPath) },
 ];

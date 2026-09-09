@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -14,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { NOINDEX } from "@/data/site";
+import { isZh } from "@/lib/locale";
 
 function NotFoundComponent() {
   return (
@@ -107,6 +109,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Jost:wght@300;400;500&display=swap",
       },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500&family=Noto+Sans+TC:wght@300;400;500&display=swap",
+      },
     ],
     scripts: [
       {
@@ -117,8 +123,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "MH Group LLC",
           description:
             "New York renovation and project management firm delivering an all-in-one service for buying, managing, renovating, furnishing and moving into Manhattan homes.",
-          telephone: "+1 (917) 283-4300",
-          email: "hello@mhgroupllc.com",
+          telephone: "+1 (917) 826-7864",
+          email: "jenna.wu@mhgroupny.com",
           areaServed: "Manhattan, New York City",
           address: {
             "@type": "PostalAddress",
@@ -138,8 +144,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
-    <html lang="en">
+    <html lang={isZh(pathname) ? "zh-Hant" : "en"}>
       <head>
         <HeadContent />
       </head>
