@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ClosingCTA, Process } from "@/components/site/Sections";
+import { ClosingCTA, ManagedAddressList, Process } from "@/components/site/Sections";
 import { GoldColumn, LineIcon, SectionHeading } from "@/components/site/Primitives";
 import { abs, renovationDetail, services } from "@/data/site";
 import { PartnerSalesBranding } from "@/components/site/PartnerSalesBranding";
@@ -97,6 +97,15 @@ function ServicesPage() {
                       Sales Represented By
                     </p>
                     <PartnerSalesBranding align="left" size="sm" className="mt-6" />
+                  </div>
+                ) : null}
+
+                {s.slug === "property-management" ? (
+                  <div className="mt-12 border-t border-white/15 pt-10">
+                    <p className="font-sans text-[11px] uppercase tracking-[0.16em] text-brass">
+                      Homes We Manage
+                    </p>
+                    <ManagedAddressList onInk className="mt-6" />
                   </div>
                 ) : null}
 
