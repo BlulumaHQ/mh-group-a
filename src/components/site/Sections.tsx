@@ -173,7 +173,13 @@ export function Process({ onPaper = true }: { onPaper?: boolean }) {
 }
 
 /* ---------- Homes We Manage (editorial address list) ---------- */
-export function ManagedAddressList({ className = "" }: { className?: string }) {
+export function ManagedAddressList({
+  className = "",
+  onInk = false,
+}: {
+  className?: string;
+  onInk?: boolean;
+}) {
   return (
     <ol
       className={`grid grid-cols-1 gap-x-14 sm:grid-cols-2 ${className}`}
@@ -181,7 +187,9 @@ export function ManagedAddressList({ className = "" }: { className?: string }) {
       {managedProperties.map((address, i) => (
         <li
           key={address}
-          className="flex items-baseline gap-5 border-b border-hairline py-4"
+          className={`flex items-baseline gap-5 border-b py-4 ${
+            onInk ? "border-white/15" : "border-hairline"
+          }`}
         >
           <span
             aria-hidden="true"
@@ -189,7 +197,13 @@ export function ManagedAddressList({ className = "" }: { className?: string }) {
           >
             {String(i + 1).padStart(2, "0")}
           </span>
-          <span className="text-[15px] leading-[1.7] text-inktext">{address}</span>
+          <span
+            className={`text-[15px] leading-[1.7] ${
+              onInk ? "text-white/80" : "text-inktext"
+            }`}
+          >
+            {address}
+          </span>
         </li>
       ))}
     </ol>
