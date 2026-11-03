@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Btn, GoldColumn, LineIcon, Reveal, SectionHeading } from "@/components/site/Primitives";
-import { ClosingCTA, Partnership, ProjectCard } from "@/components/site/Sections";
+import { ClosingCTA, HomesWeManage, Partnership, ProjectCard } from "@/components/site/Sections";
 import { abs, altLinks, OG_IMAGE } from "@/data/site";
 import { projects } from "@/data/projects";
 import { zhHome, zhMeta, zhProjects, zhProjectShared } from "@/data/zh";
@@ -35,10 +35,10 @@ function ZhHome() {
       <section className="relative isolate flex flex-col bg-ink lg:min-h-[88vh]">
         <div className="relative h-[320px] w-full lg:absolute lg:inset-y-0 lg:left-[38%] lg:h-full lg:w-[62%]">
           <img
-            src="/images/upper-west-side-86th-after-01.webp"
-            alt="MH Group 完成的上西區住宅開放式客廳與廚房"
+            src="/images/home/home-hero-new-york-city.webp"
+            alt="紐約曼哈頓天際線與哈德遜河"
             width={2400}
-            height={1602}
+            height={1600}
             loading="eager"
             fetchPriority="high"
             decoding="async"
@@ -143,46 +143,8 @@ function ZhHome() {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="section-pad bg-paper">
-        <div className="container-mh">
-          <Reveal>
-            <SectionHeading
-              onPaper
-              align="center"
-              eyebrow={zhHome.processEyebrow}
-              title={zhHome.processHeading}
-            />
-          </Reveal>
-          <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {zhHome.steps.map((step, i) => (
-              <Reveal key={step.num} delay={i * 80}>
-                <div className="relative">
-                  <div className="flex items-center gap-4">
-                    <span className="font-display text-[44px] leading-none text-brass">
-                      {step.num}
-                    </span>
-                    <LineIcon name={step.icon} size={30} />
-                    {i < zhHome.steps.length - 1 ? (
-                      <span
-                        aria-hidden="true"
-                        className="absolute right-0 hidden translate-x-1/2 font-sans text-[18px] text-brass lg:block"
-                      >
-                        &rarr;
-                      </span>
-                    ) : null}
-                  </div>
-                  <span className="mt-6 block h-px w-10 bg-brass" />
-                  <h3 className="mt-6 font-sans text-[16px] font-medium tracking-[0.06em] text-inktext">
-                    {step.label}
-                  </h3>
-                  <p className="mt-3 text-[15px] leading-[1.9] text-mutedtext">{step.copy}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Homes We Manage */}
+      <HomesWeManage eyebrow="物業管理" title="我們管理的住宅" />
 
       {/* Philosophy split */}
       <section className="grid grid-cols-1 lg:grid-cols-2">

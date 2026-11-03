@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Btn, GoldColumn, LineIcon, Reveal, SectionHeading } from "./Primitives";
 import { PartnerSalesBranding } from "./PartnerSalesBranding";
 import { services, processSteps } from "@/data/site";
+import { managedProperties } from "@/data/managedProperties";
 import { projects, type Project } from "@/data/projects";
 
 /* ---------- Services overview (paper band, hairline columns) ---------- */
@@ -166,6 +167,65 @@ export function Process({ onPaper = true }: { onPaper?: boolean }) {
             </Reveal>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Homes We Manage (editorial address list) ---------- */
+export function ManagedAddressList({
+  className = "",
+  onInk = false,
+}: {
+  className?: string;
+  onInk?: boolean;
+}) {
+  return (
+    <ol
+      className={`grid grid-cols-1 gap-x-14 sm:grid-cols-2 ${className}`}
+    >
+      {managedProperties.map((address, i) => (
+        <li
+          key={address}
+          className={`flex items-baseline gap-5 border-b py-4 ${
+            onInk ? "border-white/15" : "border-hairline"
+          }`}
+        >
+          <span
+            aria-hidden="true"
+            className="w-7 shrink-0 font-display text-[15px] leading-none text-brass"
+          >
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <span
+            className={`text-[15px] leading-[1.7] ${
+              onInk ? "text-white/80" : "text-inktext"
+            }`}
+          >
+            {address}
+          </span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+export function HomesWeManage({
+  eyebrow = "PROPERTY MANAGEMENT",
+  title = "Homes We Manage",
+}: {
+  eyebrow?: string;
+  title?: string;
+}) {
+  return (
+    <section className="section-pad bg-paper">
+      <div className="container-mh">
+        <Reveal>
+          <SectionHeading onPaper align="center" eyebrow={eyebrow} title={title} />
+        </Reveal>
+        <Reveal delay={80}>
+          <ManagedAddressList className="mt-16" />
+        </Reveal>
       </div>
     </section>
   );

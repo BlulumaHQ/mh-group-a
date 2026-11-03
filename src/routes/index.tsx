@@ -3,9 +3,9 @@ import { Btn } from "@/components/site/Primitives";
 import {
   ClosingCTA,
   FeaturedProjects,
+  HomesWeManage,
   Partnership,
   PhilosophySplit,
-  Process,
   ServicesOverview,
 } from "@/components/site/Sections";
 import { abs, OG_IMAGE, site } from "@/data/site";
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "/images/upper-west-side-86th-after-01.webp",
+        href: "/images/home/home-hero-new-york-city.webp",
       },
     ],
   }),
@@ -54,10 +54,10 @@ function Hero() {
       {/* photograph */}
       <div className="relative h-[320px] w-full lg:absolute lg:inset-y-0 lg:left-[38%] lg:h-full lg:w-[62%]">
         <img
-          src="/images/upper-west-side-86th-after-01.webp"
-          alt="Completed open living and kitchen area of the Upper West Side Residence renovated by MH Group"
+          src="/images/home/home-hero-new-york-city.webp"
+          alt="Manhattan skyline over the Hudson River, New York City"
           width={2400}
-          height={1602}
+          height={1600}
           loading="eager"
           fetchPriority="high"
           decoding="async"
@@ -117,7 +117,7 @@ function Index() {
       <Hero />
       <ServicesOverview />
       <FeaturedProjects />
-      <Process />
+      <HomesWeManage />
       <PhilosophySplit />
       <Partnership withLockup />
       <ClosingCTA

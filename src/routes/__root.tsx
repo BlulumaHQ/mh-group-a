@@ -123,8 +123,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "MH Group LLC",
           description:
             "New York renovation and project management firm delivering an all-in-one service for buying, managing, renovating, furnishing and moving into Manhattan homes.",
-          telephone: "+1 (917) 826-7864",
-          email: "jenna.wu@mhgroupny.com",
+          telephone: "+1 (516) 972-5190",
+          email: "James.huang@mhgroupny.com",
           areaServed: "Manhattan, New York City",
           address: {
             "@type": "PostalAddress",

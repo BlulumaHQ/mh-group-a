@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GoldColumn, LineIcon, Reveal, SectionHeading } from "@/components/site/Primitives";
-import { ClosingCTA } from "@/components/site/Sections";
+import { ClosingCTA, ManagedAddressList } from "@/components/site/Sections";
 import { PartnerSalesBranding } from "@/components/site/PartnerSalesBranding";
 import { abs, altLinks, services } from "@/data/site";
 import { zhMeta, zhServices } from "@/data/zh";
@@ -94,6 +94,15 @@ function ZhServices() {
                       物件買賣合作夥伴
                     </p>
                     <PartnerSalesBranding align="left" size="sm" className="mt-6" />
+                  </div>
+                ) : null}
+
+                {i === 1 ? (
+                  <div className="mt-12 border-t border-white/15 pt-10">
+                    <p className="font-sans text-[13px] tracking-[0.14em] text-brass">
+                      我們管理的住宅
+                    </p>
+                    <ManagedAddressList onInk className="mt-6" />
                   </div>
                 ) : null}
 
