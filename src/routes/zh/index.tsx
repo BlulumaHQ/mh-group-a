@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Btn, GoldColumn, LineIcon, Reveal, SectionHeading } from "@/components/site/Primitives";
 import { ClosingCTA, HomesWeManage, Partnership, ProjectCard } from "@/components/site/Sections";
+import { HeroSlideshow, heroSlides } from "@/components/site/HeroSlideshow";
 import { abs, altLinks, OG_IMAGE } from "@/data/site";
 import { projects } from "@/data/projects";
 import { zhHome, zhMeta, zhProjects, zhProjectShared } from "@/data/zh";
@@ -33,25 +34,8 @@ function ZhHome() {
   return (
     <>
       <section className="relative isolate flex flex-col bg-ink lg:min-h-[88vh]">
-        <div className="relative h-[320px] w-full lg:absolute lg:inset-y-0 lg:left-[38%] lg:h-full lg:w-[62%]">
-          <img
-            src="/images/home/home-hero-new-york-city.webp"
-            alt="紐約曼哈頓天際線與哈德遜河"
-            width={2400}
-            height={1600}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className="photo-grade h-full w-full object-cover"
-          />
-          <span
-            aria-hidden="true"
-            className="absolute inset-y-0 left-0 w-[16%]"
-            style={{
-              background: "linear-gradient(to right, #133846 0%, rgba(19,56,70,0) 100%)",
-            }}
-          />
-        </div>
+        <HeroSlideshow slides={heroSlides("zh")} />
+
 
         <div className="relative z-10 flex flex-1 bg-ink lg:min-h-[88vh] lg:w-[50%]">
           <div className="flex w-full items-center px-5 py-16 lg:px-0 lg:py-24 lg:pl-16 xl:pl-[max(64px,calc((100vw-1280px)/2+64px))]">
