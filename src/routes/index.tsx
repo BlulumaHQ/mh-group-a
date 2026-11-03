@@ -8,7 +8,6 @@ import {
   PhilosophySplit,
   ServicesOverview,
 } from "@/components/site/Sections";
-import { HeroSlideshow, heroSlides } from "@/components/site/HeroSlideshow";
 import { abs, OG_IMAGE, site } from "@/data/site";
 
 const title = "MH Group LLC | Renovation & Project Management in Manhattan";
@@ -53,7 +52,26 @@ function Hero() {
   return (
     <section className="relative isolate flex flex-col bg-ink lg:min-h-[88vh]">
       {/* photograph */}
-      <HeroSlideshow slides={heroSlides("en")} />
+      <div className="relative h-[320px] w-full bg-ink lg:absolute lg:inset-y-0 lg:left-[38%] lg:h-full lg:w-[62%]">
+        <img
+          src="/images/home/mh-group-hero-nyc-01.webp"
+          alt="Lower Manhattan skyline and waterfront seen across the Hudson River"
+          width={1920}
+          height={1080}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="photo-grade absolute inset-0 h-full w-full object-cover"
+        />
+        <span
+          aria-hidden="true"
+          className="absolute inset-y-0 left-0 w-[16%]"
+          style={{
+            background:
+              "linear-gradient(to right, #133846 0%, rgba(19,56,70,0) 100%)",
+          }}
+        />
+      </div>
 
       {/* ink panel */}
       <div className="relative z-10 flex flex-1 bg-ink lg:w-[50%] lg:min-h-[88vh]">
