@@ -6,28 +6,40 @@ export type HeroSlide = { src: string; alt: string };
 const SLIDE_MS = 3000;
 const FADE_MS = 700;
 
-const SLIDE_SRCS = [
-  "/images/home/mh-group-hero-nyc-01.webp",
-  "/images/home/mh-group-hero-nyc-02.webp",
-  "/images/home/mh-group-hero-nyc-03.webp",
-];
-
-const SLIDE_ALTS: Record<"en" | "zh", string[]> = {
+const SLIDES: Record<"en" | "zh", HeroSlide[]> = {
   en: [
-    "Lower Manhattan skyline and waterfront seen across the Hudson River",
-    "Midtown Manhattan skyline at twilight with the Empire State Building",
-    "Midtown Manhattan towers in afternoon light toward Central Park",
+    {
+      src: "/images/home/mh-group-hero-nyc-01.webp",
+      alt: "Lower Manhattan skyline and waterfront seen across the Hudson River",
+    },
+    {
+      src: "/images/home/mh-group-hero-nyc-02.webp",
+      alt: "Midtown Manhattan skyline at twilight with the Empire State Building",
+    },
+    {
+      src: "/images/home/mh-group-hero-nyc-03.webp",
+      alt: "Midtown Manhattan towers in afternoon light toward Central Park",
+    },
   ],
   zh: [
-    "曼哈頓下城天際線與哈德遜河",
-    "曼哈頓中城暮色天際線與帝國大廈",
-    "午後的曼哈頓中城摩天樓群",
+    {
+      src: "/images/home/mh-group-hero-nyc-01.webp",
+      alt: "曼哈頓下城天際線與哈德遜河",
+    },
+    {
+      src: "/images/home/mh-group-hero-nyc-02.webp",
+      alt: "曼哈頓中城暮色天際線與帝國大廈",
+    },
+    {
+      src: "/images/home/mh-group-hero-nyc-03.webp",
+      alt: "午後的曼哈頓中城摩天樓群",
+    },
   ],
 };
 
 /** Hero photographs in rotation order, with alt text for the given language. */
 export function heroSlides(locale: "en" | "zh"): HeroSlide[] {
-  return SLIDE_SRCS.map((src, i) => ({ src, alt: SLIDE_ALTS[locale][i] }));
+  return SLIDES[locale];
 }
 
 /**
