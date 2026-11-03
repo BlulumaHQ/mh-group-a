@@ -172,6 +172,51 @@ export function Process({ onPaper = true }: { onPaper?: boolean }) {
   );
 }
 
+/* ---------- Homes We Manage (editorial address list) ---------- */
+export function ManagedAddressList({ className = "" }: { className?: string }) {
+  return (
+    <ol
+      className={`grid grid-cols-1 gap-x-14 sm:grid-cols-2 ${className}`}
+    >
+      {managedProperties.map((address, i) => (
+        <li
+          key={address}
+          className="flex items-baseline gap-5 border-b border-hairline py-4"
+        >
+          <span
+            aria-hidden="true"
+            className="w-7 shrink-0 font-display text-[15px] leading-none text-brass"
+          >
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <span className="text-[15px] leading-[1.7] text-inktext">{address}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+export function HomesWeManage({
+  eyebrow = "PROPERTY MANAGEMENT",
+  title = "Homes We Manage",
+}: {
+  eyebrow?: string;
+  title?: string;
+}) {
+  return (
+    <section className="section-pad bg-paper">
+      <div className="container-mh">
+        <Reveal>
+          <SectionHeading onPaper align="center" eyebrow={eyebrow} title={title} />
+        </Reveal>
+        <Reveal delay={80}>
+          <ManagedAddressList className="mt-16" />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ---------- Philosophy split ---------- */
 const pillars = [
   { label: "INTEGRITY", icon: "integrity" },
