@@ -151,16 +151,16 @@ Nav labels (5 items, all top-level — do not create a dropdown):
 
 | Field | Value |
 |---|---|
-| Phone | `+1 (917) 283-4300` ⚠ CONFIRM |
-| Email | `hello@mhgroupllc.com` ⚠ CONFIRM |
+| Phone | `(917) 826-7864` → `tel:+19178267864` |
+| Email | `jenna.wu@mhgroupny.com` |
 | Location | New York, NY |
 | Street address | none supplied → **do not embed a map**, do not print a street address |
-| Contact person | James Huang — President, MH Group LLC |
+| Contact person | none — do not print a personal name or title |
 | Social | none supplied → no icons |
 
-> Note to builder: the client's printed portfolio lists a different contact set
-> (james.huang@mhgroupny.com / +1 516-972-5190). Use ONLY the table above unless instructed
-> otherwise. Do not print both.
+> Note to builder: this is the client-confirmed contact set (2026-11-03). Earlier
+> drafts listed James Huang / +1 516-972-5190 / james.huang@mhgroupny.com — those are
+> retired and must not appear anywhere on the site. Use ONLY the table above.
 
 ## COPYWRITING DATABASE (use verbatim)
 
