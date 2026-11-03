@@ -3,8 +3,7 @@
 // property addresses. Used by the Home page section and the
 // Services → Property Management subsection, in both English
 // and Traditional Chinese. Addresses stay in English postal
-// format on every locale. Address #14 keeps the exact
-// client-supplied ZIP ("1001") — do not "correct" it.
+// format on every locale.
 // ─────────────────────────────────────────────────────────────
 export const managedProperties = [
   "15 East 30th Street, New York, NY 10016",
@@ -20,5 +19,5 @@ export const managedProperties = [
   "140 East 56th Street, New York, NY 10022",
   "525 6th Avenue, New York, NY 10011",
   "15 Broad Street, New York, NY 10005",
-  "333 West 56th Street, New York, NY 1001",
+  "333 West 56th Street, New York, NY 10019",
 ] as const;
