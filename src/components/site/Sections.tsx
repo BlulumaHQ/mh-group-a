@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Btn, GoldColumn, LineIcon, Reveal, SectionHeading } from "./Primitives";
 import { PartnerSalesBranding } from "./PartnerSalesBranding";
 import { services, processSteps } from "@/data/site";
+import { managedProperties } from "@/data/managedProperties";
 import { projects, type Project } from "@/data/projects";
 
 /* ---------- Services overview (paper band, hairline columns) ---------- */
