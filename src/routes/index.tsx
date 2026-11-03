@@ -43,7 +43,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "/images/home/home-hero-new-york-city.webp",
+        href: "/images/home/mh-group-hero-nyc-01.webp",
       },
     ],
   }),
@@ -54,7 +54,6 @@ function Hero() {
     <section className="relative isolate flex flex-col bg-ink lg:min-h-[88vh]">
       {/* photograph */}
       <HeroSlideshow slides={heroSlides("en")} />
-
 
       {/* ink panel */}
       <div className="relative z-10 flex flex-1 bg-ink lg:w-[50%] lg:min-h-[88vh]">
