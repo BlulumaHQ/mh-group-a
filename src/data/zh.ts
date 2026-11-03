@@ -354,7 +354,7 @@ export const zhPrivacy = {
     },
     {
       h: "您的選擇",
-      p: "您可隨時來信 James.huang@mhgroupny.com，要求更正或刪除我們所持有的您的資訊。",
+      p: "您可隨時來信 jenna.wu@mhgroupny.com，要求更正或刪除我們所持有的您的資訊。",
     },
   ],
 };
@@ -385,7 +385,7 @@ export const zhTerms = {
     },
     {
       h: "聯絡我們",
-      p: "如對本使用條款有任何疑問，請來信 James.huang@mhgroupny.com。",
+      p: "如對本使用條款有任何疑問，請來信 jenna.wu@mhgroupny.com。",
     },
   ],
 };

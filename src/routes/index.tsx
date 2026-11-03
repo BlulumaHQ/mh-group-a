@@ -8,6 +8,7 @@ import {
   PhilosophySplit,
   ServicesOverview,
 } from "@/components/site/Sections";
+import { HeroSlideshow, heroSlides } from "@/components/site/HeroSlideshow";
 import { abs, OG_IMAGE, site } from "@/data/site";
 
 const title = "MH Group LLC | Renovation & Project Management in Manhattan";
@@ -42,7 +43,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "/images/home/home-hero-new-york-city.webp",
+        href: "/images/home/mh-group-hero-nyc-01.webp",
       },
     ],
   }),
@@ -52,26 +53,7 @@ function Hero() {
   return (
     <section className="relative isolate flex flex-col bg-ink lg:min-h-[88vh]">
       {/* photograph */}
-      <div className="relative h-[320px] w-full lg:absolute lg:inset-y-0 lg:left-[38%] lg:h-full lg:w-[62%]">
-        <img
-          src="/images/home/home-hero-new-york-city.webp"
-          alt="Manhattan skyline over the Hudson River, New York City"
-          width={2400}
-          height={1600}
-          loading="eager"
-          fetchPriority="high"
-          decoding="async"
-          className="photo-grade h-full w-full object-cover"
-        />
-        <span
-          aria-hidden="true"
-          className="absolute inset-y-0 left-0 w-[16%]"
-          style={{
-            background:
-              "linear-gradient(to right, #133846 0%, rgba(19,56,70,0) 100%)",
-          }}
-        />
-      </div>
+      <HeroSlideshow slides={heroSlides("en")} />
 
       {/* ink panel */}
       <div className="relative z-10 flex flex-1 bg-ink lg:w-[50%] lg:min-h-[88vh]">

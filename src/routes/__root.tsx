@@ -7,6 +7,7 @@ import {
   useRouterState,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -39,7 +40,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -123,8 +124,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "MH Group LLC",
           description:
             "New York renovation and project management firm delivering an all-in-one service for buying, managing, renovating, furnishing and moving into Manhattan homes.",
-          telephone: "+1 (516) 972-5190",
-          email: "James.huang@mhgroupny.com",
+          telephone: "+1 (917) 826-7864",
+          email: "jenna.wu@mhgroupny.com",
           areaServed: "Manhattan, New York City",
           address: {
             "@type": "PostalAddress",
