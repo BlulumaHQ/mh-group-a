@@ -17,12 +17,10 @@ export const NOINDEX = true;
 export const site = {
   name: "MH Group LLC",
   positioning: "One Partner. Every Step Home.",
-  phone: "(516) 972-5190",
-  phoneHref: "tel:+15169725190",
-  email: "James.huang@mhgroupny.com",
+  phone: "(917) 826-7864",
+  phoneHref: "tel:+19178267864",
+  email: "jenna.wu@mhgroupny.com",
   location: "New York, NY",
-  contactPerson: "James Huang",
-  contactTitle: "President, MH Group LLC",
   footerTagline:
     "A one-stop solution for real estate, property management, renovation, and home furnishing. We take care of everything, so you can enjoy the results.",
   homeDescription:
