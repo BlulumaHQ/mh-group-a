@@ -70,11 +70,11 @@ export const services = [
     blurb:
       "Curated furniture selection, staging for sales and rental, and seamless move-in service.",
     icon: "armchair" as const,
-    image: "/images/upper-west-side-86th-after-02.webp",
-    imageW: 2400,
-    imageH: 1602,
+    image: "/images/services/furniture-staging-move-in.webp",
+    imageW: 1200,
+    imageH: 800,
     imageAlt:
-      "Furnished and styled living room in the Upper West Side Residence by MH Group",
+      "Staged living room with a sofa, wooden coffee table, and open dining area",
   },
 ];
 
