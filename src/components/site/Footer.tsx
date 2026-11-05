@@ -14,10 +14,10 @@ const navEn = [
 ];
 
 const serviceLinksEn = [
-  "Real Estate Sales & Purchase",
-  "Property Management",
+  "Real Estate Sales & Leasing",
+  "Property & Asset Management",
   "Renovation & Project Management",
-  "Furniture, Styling & Move-in Service",
+  "Furniture, Staging & Move-in Service",
 ];
 
 export function Footer() {

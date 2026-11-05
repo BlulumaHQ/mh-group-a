@@ -6,7 +6,7 @@ import { PartnerSalesBranding } from "@/components/site/PartnerSalesBranding";
 
 const title = "Services | MH Group LLC";
 const description =
-  "Real estate sales and purchase, property management, renovation and project management, and furniture, styling and move-in service across Manhattan.";
+  "Real estate sales and leasing, property and asset management, renovation and project management, and furniture, staging and move-in service across Manhattan.";
 
 export const Route = createFileRoute("/services")({
   component: ServicesPage,
