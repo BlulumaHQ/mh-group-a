@@ -24,7 +24,7 @@ export const site = {
   footerTagline:
     "A one-stop solution for real estate, property management, renovation, and home furnishing. We take care of everything, so you can enjoy the results.",
   homeDescription:
-    "MH Group LLC is a New York renovation and project management firm delivering an all-in-one service for buying, managing, renovating, furnishing and moving into Manhattan homes.",
+    "MH Group LLC provides real estate sales and leasing, property and asset management, renovation project management, and staging services in Manhattan.",
 };
 
 export const services = [
