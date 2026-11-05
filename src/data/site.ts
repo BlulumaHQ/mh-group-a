@@ -30,9 +30,9 @@ export const site = {
 export const services = [
   {
     slug: "real-estate",
-    title: "Real Estate Sales & Purchase",
+    title: "Real Estate Sales & Leasing",
     blurb:
-      "Expert guidance for buying, selling, and investing in residential properties across Manhattan.",
+      "Expert guidance for buying, selling, and leasing residential properties across Manhattan.",
     icon: "house" as const,
     image: "/images/upper-east-side-66th-neighborhood.webp",
     imageW: 960,
@@ -42,9 +42,9 @@ export const services = [
   },
   {
     slug: "property-management",
-    title: "Property Management",
+    title: "Property & Asset Management",
     blurb:
-      "Comprehensive management services that protect your investment and maximize value.",
+      "From tenant management to repairment and financial reports, we provide comprehensive property and asset management services.",
     icon: "building" as const,
     image: "/images/midtown-east-55th-10c-after-02.webp",
     imageW: 2400,
@@ -66,9 +66,9 @@ export const services = [
   },
   {
     slug: "furnishing",
-    title: "Furniture, Styling & Move-in Service",
+    title: "Furniture, Staging & Move-in Service",
     blurb:
-      "Curated furniture selection, professional styling, and seamless move-in for a perfect start.",
+      "Curated furniture selection, staging for sales and rental, and seamless move-in service.",
     icon: "armchair" as const,
     image: "/images/upper-west-side-86th-after-02.webp",
     imageW: 2400,
