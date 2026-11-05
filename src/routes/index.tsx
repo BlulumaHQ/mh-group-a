@@ -10,7 +10,7 @@ import {
 } from "@/components/site/Sections";
 import { abs, OG_IMAGE, site } from "@/data/site";
 
-const title = "MH Group LLC | Renovation & Project Management in Manhattan";
+const title = "Home | MH Group LLC";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:image:alt",
         content:
-          "MH Group LLC — renovation and project management in Manhattan",
+          "MH Group LLC — Real estate, property and asset management, renovation, and staging services in Manhattan",
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
