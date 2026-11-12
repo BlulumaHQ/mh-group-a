@@ -36,7 +36,7 @@ function ZhPhilosophy() {
           <div className="flex">
             <GoldColumn onPaper />
             <h2 className="max-w-[900px] text-[28px] leading-[1.35] text-inktext lg:text-[44px]">
-              {zhPhilosophy.h1}
+              {zhPhilosophy.heading}
             </h2>
           </div>
           <p className="mt-12 max-w-[760px] pl-10 text-[17px] leading-[2] text-mutedtext">

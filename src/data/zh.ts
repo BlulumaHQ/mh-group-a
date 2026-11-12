@@ -266,7 +266,8 @@ export const zhProjects: Record<
 
 export const zhPhilosophy = {
   eyebrow: "品牌理念",
-  h1: "以信任為本，以長期價值為目標。",
+  h1: "以信任為本。",
+  heading: "以信任為本，以長期價值為目標。",
   intro:
     "MH Group 相信，住宅不只是生活發生的空間，也是需要被清楚規劃與持續管理的資產。我們以完整的專案統籌、在地經驗與一致溝通，協助客戶在每個持有階段作出更從容的決策。",
   values: [
